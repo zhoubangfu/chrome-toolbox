@@ -2,8 +2,6 @@
 
 chrome-toolbox 是谷歌浏览器`快捷工具`插件，实现字符替换、统计、随机值等等功能，使用 react 开发。开发环境使用[react-env](https://github.com/varddd/react-env)修改。
 
-**展示图片位置**
-
 ## 项目开发环境说明
 
 项目使用 react 开发，使用 cra 创建开发环境，需要有以下入门知识：
