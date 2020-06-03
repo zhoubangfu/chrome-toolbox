@@ -1,0 +1,37 @@
+.main {
+  padding: 10px;
+
+  .input-area,
+  .actions {
+    margin-bottom: 16px;
+  }
+
+  .input-area {
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      max-height: 178px;
+      border: 1px solid #dcdee2;
+      border-radius: 4px;
+      padding: 4px 7px;
+      box-sizing: border-box;
+
+      &:hover {
+        border-color: #57a3f3;
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid #57a3f3;
+        box-shadow: 0 0 0 2px rgba(45, 140, 240, 0.2);
+        transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+          -webkit-box-shadow 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}

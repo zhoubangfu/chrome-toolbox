@@ -1,0 +1,16 @@
+{
+  "name": "chrome-toolbox",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "谷歌浏览器快捷工具箱，源码https://github.com/varddd/chrome-toolbox",
+  "icons": {
+    "16": "img/logo128.png",
+    "48": "img/logo128.png",
+    "128": "img/logo128.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "img/logo32.png"
+  },
+  "permissions": ["background", "storage"]
+}

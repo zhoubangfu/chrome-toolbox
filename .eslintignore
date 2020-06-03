@@ -1,0 +1,10 @@
+.vscode/
+node_modules/
+build/
+
+# 细心就会发现目录里有一个react-app-env.d.ts
+# 这个文件去查create-react-app文档
+# 由于当时没有添加进来，eslint给按不明规则修复了
+# 完蛋，模块化css找不路径了
+
+src/react-app-env.d.ts
