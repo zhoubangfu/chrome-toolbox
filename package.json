@@ -49,7 +49,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "src/**/*.{ts,tsx}": [
       "eslint --fix"
     ],
     "**/*.{ts,tsx,md,json}": [
