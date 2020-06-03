@@ -220,7 +220,7 @@ module.exports = {
     'no-unreachable': 'error',
     'no-unsafe-finally': 'error',
     'no-unused-vars': [
-      'error',
+      'warn',
       {
         vars: 'all',
         args: 'none'
