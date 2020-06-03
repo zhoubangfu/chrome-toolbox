@@ -1,9 +1,25 @@
 import React, { useState, useRef } from 'react'
 
-import { Button } from 'antd'
+import { Button, Descriptions, message } from 'antd'
 import { jsCopy } from '@/utils'
 
 import styles from './style.module.scss'
+
+message.config({
+  maxCount: 1
+})
+
+// 匹配单个数字
+const numReg = /\d/g
+// 匹配数值
+const numValReg = /\d+/g
+// 匹配英文字符
+const charReg = /[a-zA-Z]/g
+// 匹配英文单词
+const strReg = /[a-zA-Z]+/g
+// 中文字符
+const chineseCharReg = /[\u4e00-\u9fa5]/g
+//
 
 const StrTools = () => {
   // 输入内容
@@ -19,7 +35,7 @@ const StrTools = () => {
 
   // 大小写转换
   const actionHandlers = async (
-    type: 'upper' | 'lower' | 'underline' | 'hump' = 'lower'
+    type: 'upper' | 'lower' | 'underline' | 'hump' | 'copy' = 'lower'
   ) => {
     let value = inputText
 
@@ -47,9 +63,15 @@ const StrTools = () => {
         value = inputText.replace(/([A-Z])/g, '_$1').toLowerCase()
         break
       }
-      default: {
+      case 'lower': {
         value = inputText.toLocaleLowerCase()
         break
+      }
+      default: {
+        jsCopy(value)
+
+        message.success('已复制！')
+        return
       }
     }
 
@@ -75,9 +97,20 @@ const StrTools = () => {
         <Button onClick={() => actionHandlers('upper')}>小写转大写</Button>
         <Button onClick={() => actionHandlers('hump')}>下划换驼峰</Button>
         <Button onClick={() => actionHandlers('underline')}>驼峰转下划</Button>
-        <Button onClick={() => actionHandlers('lower')}>字符统计</Button>
+        <Button onClick={() => actionHandlers('copy')}>复制</Button>
       </div>
-      <div>统计结果</div>
+      <Descriptions title="字符统计结果" bordered column={3}>
+        <Descriptions.Item label="中文单字">34</Descriptions.Item>
+        <Descriptions.Item label="中文单词">34</Descriptions.Item>
+        <Descriptions.Item label="英文单字">324</Descriptions.Item>
+        <Descriptions.Item label="英文单词">84</Descriptions.Item>
+        <Descriptions.Item label="数字单字">23</Descriptions.Item>
+        <Descriptions.Item label="数字单词">12</Descriptions.Item>
+        <Descriptions.Item label="特殊字符">12</Descriptions.Item>
+        <Descriptions.Item label="中文标点">12</Descriptions.Item>
+        <Descriptions.Item label="英文标点">12</Descriptions.Item>
+        <Descriptions.Item label="全部字符">12</Descriptions.Item>
+      </Descriptions>
     </div>
   )
 }
