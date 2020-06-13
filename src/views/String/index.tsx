@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useRef, useEffect } from 'react'
 
-import { Button, Descriptions, message } from 'antd'
+import { Button, Descriptions as Desc, message } from 'antd'
 import { jsCopy } from '@/utils'
 
 import styles from './style.module.scss'
@@ -9,21 +10,77 @@ message.config({
   maxCount: 1
 })
 
+export interface ResultInterface {
+  zhChar: number
+  zhStr: number
+  enChar: number
+  enStr: number
+  numChar: number
+  numStr: number
+  special: number
+  zhPunctuation: number
+  enPunctuation: number
+  total: number
+}
+
 // 匹配单个数字
-const numReg = /\d/g
+const numCharReg = /\d/g
 // 匹配数值
-const numValReg = /\d+/g
+const numStrReg = /\d+/g
 // 匹配英文字符
-const charReg = /[a-zA-Z]/g
+const enCharReg = /[a-zA-Z]/g
 // 匹配英文单词
-const strReg = /[a-zA-Z]+/g
+const enStrReg = /[a-zA-Z]+/g
 // 中文字符
-const chineseCharReg = /[\u4e00-\u9fa5]/g
-//
+const zhCharReg = /[\u4e00-\u9fa5]/g
+// 中文单词
+const zhStrReg = /[\u4e00-\u9fa5]+/g
+// 特殊字符
+const specialReg = /((?=[\x21-\x7e]+)[^A-Za-z0-9])/g
+// 中文标点
+const zhPunctuationReg = /[\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b]/g
+// 英文标点
+/* eslint-disable no-useless-escape */
+const enPunctuationReg = /[`~!@#$%^&*()_+\-=\[\]{}\\|;:''"",.\/<>?]/g
+
+const regResult = (targetStr: string, reg: RegExp): number => {
+  const regResultArr = targetStr.match(reg)
+
+  return regResultArr === null ? 0 : regResultArr?.length
+}
 
 const StrTools = () => {
   // 输入内容
   const [inputText, setInputText] = useState('')
+  // 统计结果
+  const [result, setResult] = useState<ResultInterface>({
+    zhChar: 0,
+    zhStr: 0,
+    enChar: 0,
+    enStr: 0,
+    numChar: 0,
+    numStr: 0,
+    special: 0,
+    zhPunctuation: 0,
+    enPunctuation: 0,
+    total: 0
+  })
+
+  useEffect(() => {
+    setResult({
+      ...result,
+      zhChar: regResult(inputText, zhCharReg),
+      zhStr: regResult(inputText, zhStrReg),
+      enChar: regResult(inputText, enCharReg),
+      enStr: regResult(inputText, enStrReg),
+      numChar: regResult(inputText, numCharReg),
+      numStr: regResult(inputText, numStrReg),
+      special: regResult(inputText, specialReg),
+      zhPunctuation: regResult(inputText, zhPunctuationReg),
+      enPunctuation: regResult(inputText, enPunctuationReg),
+      total: inputText.length
+    })
+  }, [inputText])
 
   // 输入框
   const textAreaRef: React.RefObject<any> = useRef()
@@ -99,18 +156,18 @@ const StrTools = () => {
         <Button onClick={() => actionHandlers('underline')}>驼峰转下划</Button>
         <Button onClick={() => actionHandlers('copy')}>复制</Button>
       </div>
-      <Descriptions title="字符统计结果" bordered column={3}>
-        <Descriptions.Item label="中文单字">34</Descriptions.Item>
-        <Descriptions.Item label="中文单词">34</Descriptions.Item>
-        <Descriptions.Item label="英文单字">324</Descriptions.Item>
-        <Descriptions.Item label="英文单词">84</Descriptions.Item>
-        <Descriptions.Item label="数字单字">23</Descriptions.Item>
-        <Descriptions.Item label="数字单词">12</Descriptions.Item>
-        <Descriptions.Item label="特殊字符">12</Descriptions.Item>
-        <Descriptions.Item label="中文标点">12</Descriptions.Item>
-        <Descriptions.Item label="英文标点">12</Descriptions.Item>
-        <Descriptions.Item label="全部字符">12</Descriptions.Item>
-      </Descriptions>
+      <Desc title="字符统计结果" bordered column={3}>
+        <Desc.Item label="中文单字">{result.zhChar}</Desc.Item>
+        <Desc.Item label="中文单词">{result.zhStr}</Desc.Item>
+        <Desc.Item label="英文单字">{result.enChar}</Desc.Item>
+        <Desc.Item label="英文单词">{result.enStr}</Desc.Item>
+        <Desc.Item label="数字单字">{result.numChar}</Desc.Item>
+        <Desc.Item label="数字单词">{result.numStr}</Desc.Item>
+        <Desc.Item label="特殊字符">{result.special}</Desc.Item>
+        <Desc.Item label="中文标点">{result.zhPunctuation}</Desc.Item>
+        <Desc.Item label="英文标点">{result.enPunctuation}</Desc.Item>
+        <Desc.Item label="全部字符">{result.total}</Desc.Item>
+      </Desc>
     </div>
   )
 }
