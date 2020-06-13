@@ -68,7 +68,6 @@ const StrTools = () => {
 
   useEffect(() => {
     setResult({
-      ...result,
       zhChar: regResult(inputText, zhCharReg),
       zhStr: regResult(inputText, zhStrReg),
       enChar: regResult(inputText, enCharReg),
