@@ -26,7 +26,7 @@ module.exports = {
     addWebpackAlias({
       // ../src是基于当前配置文件的位置
       '@': path.resolve(__dirname, 'src'),
-      '@components': path.resolve(__dirname, 'src/components'),
+      '@cps': path.resolve(__dirname, 'src/components'),
       '@utils': path.resolve(__dirname, 'src/utils')
     }),
     setWebpackPublicPath(process.env.PUBLIC_URL),

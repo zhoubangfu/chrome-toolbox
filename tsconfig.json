@@ -4,9 +4,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
     ],
     "allowJs": true,
     "skipLibCheck": true,
