@@ -7,6 +7,12 @@ import { jsCopy } from '@/utils'
 import styles from './style.module.scss'
 
 const options = ['大写字母', '小写字母', '数字', '英文符号']
+const charPool = [
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  'abcdefghijklmnopqrstuvwxyz',
+  '0123456789',
+  '`~!@#$%^&*_-+=:;,.?'
+]
 
 const RandomTools = () => {
   // 随机类型
@@ -22,9 +28,31 @@ const RandomTools = () => {
   }
 
   // 生成字符
-  const handleGenerateTarget = (value: any): void => {
-    console.log(value)
-    setTargetArr(['232', '23234'])
+  const handleGenerateTarget = ({
+    randomLength = 16,
+    randomTypes = ['小写字母', '数字']
+  }): void => {
+    // 备选字符
+    const poolTarget = randomTypes.reduce((all = '', curr: string, index: number) => {
+      if (index === 1) {
+        all = charPool[options.indexOf(all)]
+      }
+      return all + charPool[options.indexOf(curr)]
+    })
+
+    // 生成结果
+    const randomArr = []
+
+    for (let i = 0; i < 5; i++) {
+      let randomStr = ''
+      for (let j = 0; j < randomLength; j++) {
+        randomStr += poolTarget[Math.floor(Math.random() * poolTarget.length)]
+      }
+
+      randomArr.push(randomStr)
+    }
+
+    setTargetArr(randomArr)
   }
 
   return (
@@ -58,7 +86,17 @@ const RandomTools = () => {
         <List
           dataSource={targetArr}
           bordered
-          renderItem={(item) => <List.Item>{item}</List.Item>}
+          renderItem={(item) => (
+            <List.Item
+              actions={[
+                <Button type="link" onClick={() => jsCopy(item)}>
+                  复制
+                </Button>
+              ]}
+            >
+              {item}
+            </List.Item>
+          )}
         />
       </div>
     </div>
