@@ -4,8 +4,6 @@ import { SliderValue } from 'antd/lib/slider'
 
 import { jsCopy } from '@/utils'
 
-import styles from './style.module.scss'
-
 const options = ['大写字母', '小写字母', '数字', '英文符号']
 const charPool = [
   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -56,7 +54,7 @@ const RandomTools = () => {
   }
 
   return (
-    <div className={styles.random}>
+    <div className="main">
       <Form
         onFinish={handleGenerateTarget}
         initialValues={{
@@ -88,6 +86,7 @@ const RandomTools = () => {
           bordered
           renderItem={(item) => (
             <List.Item
+              style={{ padding: '4px 0 4px 12px' }}
               actions={[
                 <Button type="link" onClick={() => jsCopy(item)}>
                   复制
