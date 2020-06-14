@@ -3,6 +3,7 @@ export const jsCopy = (value: string) => {
   document.body.appendChild(input)
 
   input.setAttribute('value', value)
+  input.style.position = 'absolute'
   input.select()
 
   document.execCommand('copy')
