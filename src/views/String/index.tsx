@@ -140,7 +140,7 @@ const StrTools = () => {
   }
 
   return (
-    <div className={styles.main}>
+    <div className="main">
       <div className={styles['input-area']}>
         <textarea
           ref={textAreaRef}
