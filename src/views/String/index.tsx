@@ -126,6 +126,7 @@ const StrTools = () => {
       default: {
         jsCopy(value)
 
+        message.destroy()
         message.success('已复制！')
         return
       }

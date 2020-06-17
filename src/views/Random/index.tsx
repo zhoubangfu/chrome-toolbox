@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Slider, Checkbox, Button, List } from 'antd'
+import { Form, Slider, Checkbox, Button, List, message } from 'antd'
 import { SliderValue } from 'antd/lib/slider'
 
 import { jsCopy } from '@/utils'
@@ -53,6 +53,12 @@ const RandomTools = () => {
     setTargetArr(randomArr)
   }
 
+  const handleCopy = (text: string): void => {
+    jsCopy(text)
+    message.destroy()
+    message.success('已复制！ ')
+  }
+
   return (
     <div className="main">
       <Form
@@ -88,7 +94,7 @@ const RandomTools = () => {
             <List.Item
               style={{ padding: '4px 0 4px 12px' }}
               actions={[
-                <Button type="link" onClick={() => jsCopy(item)}>
+                <Button type="link" onClick={() => handleCopy(item)}>
                   复制
                 </Button>
               ]}

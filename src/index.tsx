@@ -12,7 +12,7 @@ import EDCodeTools from './views/EDCode'
 import './styles/global.scss'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <Tabs defaultActiveKey="3">
       <Tabs.TabPane tab="字符转换" key="1">
         <StrTools />
@@ -36,6 +36,6 @@ ReactDOM.render(
         https://github.com/varddd/chrome-toolbox
       </a>
     </footer>
-  </React.StrictMode>,
+  </>,
   document.getElementById('popup')
 )
