@@ -50,11 +50,7 @@ const RegExpTools = () => {
           />
         </Form.Item>
         <Form.Item style={{ marginBottom: 0 }}>
-          <Form.Item
-            name="regexp"
-            rules={[{ required: true }]}
-            style={{ display: 'inline-block', width: '50%' }}
-          >
+          <Form.Item name="regexp" style={{ display: 'inline-block', width: '50%' }}>
             <Input
               value={regexp}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -81,11 +77,7 @@ const RegExpTools = () => {
           <Input.TextArea placeholder="匹配结果" disabled rows={3} value={matchResult} />
         </Form.Item>
         <Form.Item style={{ marginBottom: 0 }}>
-          <Form.Item
-            name="replaceText"
-            rules={[{ required: true }]}
-            style={{ display: 'inline-block', width: '70%' }}
-          >
+          <Form.Item name="replaceText" style={{ display: 'inline-block', width: '70%' }}>
             <Input
               value={replaceText}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
