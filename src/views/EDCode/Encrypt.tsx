@@ -1,5 +1,5 @@
 import React from 'react'
-import CryptoJS, { DecryptedMessage } from 'crypto-js'
+import { DecryptedMessage, AES, TripleDES, RC4, Rabbit, enc } from 'crypto-js'
 
 import { Form, Input, Button, Radio, message } from 'antd'
 
@@ -17,24 +17,24 @@ const handleDo = (
 
   switch (algorithmName) {
     case 'AES': {
-      result = CryptoJS.AES[actionType](text, secretPassphrase)
+      result = AES[actionType](text, secretPassphrase)
       break
     }
     case 'Tripledes': {
-      result = CryptoJS.TripleDES[actionType](text, secretPassphrase)
+      result = TripleDES[actionType](text, secretPassphrase)
       break
     }
     case 'RC4': {
-      result = CryptoJS.RC4[actionType](text, secretPassphrase)
+      result = RC4[actionType](text, secretPassphrase)
       break
     }
     case 'Rabbit': {
-      result = CryptoJS.Rabbit[actionType](text, secretPassphrase)
+      result = Rabbit[actionType](text, secretPassphrase)
     }
   }
 
   if (actionType === 'decrypt') {
-    return result.toString(CryptoJS.enc.Utf8)
+    return result.toString(enc.Utf8)
   } else {
     return result.toString()
   }
