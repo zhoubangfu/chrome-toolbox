@@ -1,6 +1,8 @@
 ## 简介
 
-chrome-toolbox 是谷歌浏览器`快捷工具`插件，实现字符替换、统计、随机值等等功能，使用 react 开发。开发环境使用[react-env](https://github.com/varddd/react-env)修改。
+chrome-toolbox 是谷歌浏览器`快捷工具`插件，使用 react 开发，意在提供一个快捷方便且可自定义的工具箱，目前实现【字符替换、统计】、【随机值】、【正则测试】功能。
+
+开发环境使用[react-env](https://github.com/varddd/react-env)修改。
 
 ## 项目开发环境说明
 
