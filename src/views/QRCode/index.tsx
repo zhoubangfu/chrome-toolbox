@@ -1,7 +1,7 @@
 import React from 'react'
 
-const RandomTools = () => {
+const QRcodeTools = () => {
   return <div>二维码</div>
 }
 
-export default RandomTools
+export default QRcodeTools

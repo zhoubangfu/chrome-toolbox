@@ -23,11 +23,11 @@ ReactDOM.render(
       <Tabs.TabPane tab="正则测试" key="3">
         <RegExpTools />
       </Tabs.TabPane>
-      <Tabs.TabPane tab="二维码" key="4">
-        <QRCodeTools />
-      </Tabs.TabPane>
-      <Tabs.TabPane tab="加解密" key="5">
+      <Tabs.TabPane tab="加解密" key="4">
         <EDCodeTools />
+      </Tabs.TabPane>
+      <Tabs.TabPane tab="二维码" key="5">
+        <QRCodeTools />
       </Tabs.TabPane>
     </Tabs>
     <footer className="footer">
