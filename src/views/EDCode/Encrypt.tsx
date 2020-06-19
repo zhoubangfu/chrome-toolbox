@@ -94,9 +94,9 @@ const Encrypt = () => {
         >
           <Input.TextArea rows={5} />
         </Form.Item>
-        <Form.Item label={<span style={{ marginLeft: '10px' }}>算法</span>}>
+        <Form.Item label={<span className="no-rule-form-label">算法</span>}>
           <Form.Item
-            style={{ display: 'inline-block', margin: '0 8px' }}
+            className="form-innner-item"
             name="algorithmName"
             rules={[{ required: true, message: '请至少选择一种字符类型!' }]}
           >
@@ -107,10 +107,10 @@ const Encrypt = () => {
               <Radio value="Rabbit">Rabbit</Radio>
             </Radio.Group>
           </Form.Item>
-          <Form.Item style={{ display: 'inline-block', margin: '0 8px' }}>
+          <Form.Item className="form-innner-item">
             <Button onClick={encrypt}>加密</Button>
           </Form.Item>
-          <Form.Item style={{ display: 'inline-block', margin: '0 8px' }}>
+          <Form.Item className="form-innner-item">
             <Button onClick={decrypt}>解密</Button>
           </Form.Item>
         </Form.Item>
