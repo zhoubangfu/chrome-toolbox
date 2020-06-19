@@ -5,7 +5,6 @@ import Base64 from './Base64'
 import Encode from './Encode'
 import Encrypt from './Encrypt'
 import Hash from './Hash'
-import ImgToBase64 from './ImgToBase64'
 
 import styles from './style.module.scss'
 
@@ -28,12 +27,7 @@ const EncryptTools = () => {
             <Base64 />
           </div>
         </Tabs.TabPane>
-        <Tabs.TabPane tab="图片/base64" key="4">
-          <div className={styles.content}>
-            <ImgToBase64 />
-          </div>
-        </Tabs.TabPane>
-        <Tabs.TabPane tab="en/decode" key="5">
+        <Tabs.TabPane tab="url转码" key="4">
           <div className={styles.content}>
             <Encode />
           </div>
