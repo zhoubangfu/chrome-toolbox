@@ -92,7 +92,7 @@ const Encrypt = () => {
           name="plaintext"
           rules={[{ required: true, message: '请输入加密明文!' }]}
         >
-          <Input.TextArea rows={4} />
+          <Input.TextArea rows={5} />
         </Form.Item>
         <Form.Item label={<span style={{ marginLeft: '10px' }}>算法</span>}>
           <Form.Item
@@ -119,7 +119,7 @@ const Encrypt = () => {
           name="ciphertext"
           rules={[{ required: true, message: '请输入解密密文!' }]}
         >
-          <Input.TextArea rows={4} />
+          <Input.TextArea rows={5} />
         </Form.Item>
       </Form>
     </div>
