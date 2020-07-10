@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Form, Slider, Checkbox, Button, List, message } from 'antd'
-import { SliderValue } from 'antd/lib/slider'
 
 import { jsCopy } from '@/utils'
 
@@ -16,7 +15,7 @@ const RandomTools = () => {
   // 随机类型
   const [randomTypes, setRandomTypes] = useState<Array<string>>(['小写字母', '数字'])
   // 字符长度
-  const [randomLength, setRandomLength] = useState<SliderValue>(16)
+  const [randomLength, setRandomLength] = useState(16)
   // 生成字符
   const [targetArr, setTargetArr] = useState<Array<string>>([])
 
