@@ -1,4 +1,5 @@
 const path = require('path')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const {
   override,
   fixBabelImports,
@@ -7,11 +8,22 @@ const {
   disableChunk
 } = require('customize-cra')
 
+// const isEnvProduction = process.env.NODE_ENV === 'production'
+
 const addCustomize = () => (config) => {
   // 删除ManifestPlugin配置，不生成asset-manifest.json
-  config.plugins.splice(6, 1)
   // 删除WorkboxWebpackPlugin配置，不使用pwa
-  config.plugins.splice(7, 1)
+  const withOutPlugins = ['ManifestPlugin', 'GenerateSW']
+  config.plugins = config.plugins.filter(
+    (plugin) => withOutPlugins.indexOf(plugin.constructor.name) === -1
+  )
+
+  // isEnvProduction &&
+  //   config.plugins.push(
+  //     new MiniCssExtractPlugin({
+  //       filename: 'static/css/[name].css'
+  //     })
+  //   )
 
   return config
 }
