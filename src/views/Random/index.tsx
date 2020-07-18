@@ -68,7 +68,12 @@ const RandomTools = () => {
         }}
       >
         <Form.Item label="生成字符长度" name="randomLength" rules={[{ required: true }]}>
-          <Slider value={randomLength} onChange={setRandomLength} min={1} max={100} />
+          <Slider
+            value={randomLength}
+            onChange={(val: any) => setRandomLength(val)}
+            min={1}
+            max={100}
+          />
         </Form.Item>
         <Form.Item
           label="包含字符类型"
