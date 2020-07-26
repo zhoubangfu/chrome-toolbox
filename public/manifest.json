@@ -12,5 +12,5 @@
     "default_popup": "index.html",
     "default_icon": "img/logo32.png"
   },
-  "permissions": ["background", "storage", "tabs"]
+  "permissions": ["background", "storage", "tabs", "browsingData"]
 }
