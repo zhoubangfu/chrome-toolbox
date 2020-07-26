@@ -23,8 +23,6 @@ const QRcodeTools = () => {
         if (error) {
           message.error('出错啦！')
           console.error(error)
-        } else {
-          message.success('已完成！')
         }
       })
     })
