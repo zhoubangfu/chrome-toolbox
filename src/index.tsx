@@ -14,7 +14,7 @@ import './styles/global.scss'
 
 ReactDOM.render(
   <>
-    <Tabs defaultActiveKey="1">
+    <Tabs defaultActiveKey="5">
       <Tabs.TabPane tab="字符转换" key="1">
         <StrTools />
       </Tabs.TabPane>
