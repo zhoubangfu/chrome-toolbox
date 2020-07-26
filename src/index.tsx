@@ -8,6 +8,7 @@ import RandomTools from './views/Random'
 import RegExpTools from './views/RegExp'
 import QRCodeTools from './views/QRCode'
 import EDCodeTools from './views/EDCode'
+import CacheTools from './views/Cache'
 
 import './styles/global.scss'
 
@@ -28,6 +29,9 @@ ReactDOM.render(
       </Tabs.TabPane>
       <Tabs.TabPane tab="二维码" key="5">
         <QRCodeTools />
+      </Tabs.TabPane>
+      <Tabs.TabPane tab="清缓存" key="6">
+        <CacheTools />
       </Tabs.TabPane>
     </Tabs>
     <footer className="footer">
