@@ -14,24 +14,24 @@ import './styles/global.scss'
 
 ReactDOM.render(
   <>
-    <Tabs defaultActiveKey="1">
-      <Tabs.TabPane tab="字符转换" key="1">
+    <Tabs defaultActiveKey="str-tool">
+      <Tabs.TabPane tab="字符转换" key="str-tool">
         <StrTools />
       </Tabs.TabPane>
-      <Tabs.TabPane tab="随机值" key="2">
+      <Tabs.TabPane tab="清理缓存" key="cache-tool">
+        <CacheTools />
+      </Tabs.TabPane>
+      <Tabs.TabPane tab="随机字符" key="random-tool">
         <RandomTools />
       </Tabs.TabPane>
-      <Tabs.TabPane tab="正则测试" key="3">
+      <Tabs.TabPane tab="正则测试" key="reg-exp-tool">
         <RegExpTools />
       </Tabs.TabPane>
-      <Tabs.TabPane tab="加解密" key="4">
+      <Tabs.TabPane tab="加解密" key="edcode-tool">
         <EDCodeTools />
       </Tabs.TabPane>
-      <Tabs.TabPane tab="二维码" key="5">
+      <Tabs.TabPane tab="二维码" key="qrcode-tool">
         <QRCodeTools />
-      </Tabs.TabPane>
-      <Tabs.TabPane tab="清缓存" key="6">
-        <CacheTools />
       </Tabs.TabPane>
     </Tabs>
     <footer className="footer">
