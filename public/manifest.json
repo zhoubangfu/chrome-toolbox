@@ -2,7 +2,7 @@
   "name": "chrome-toolbox",
   "version": "1.0.1",
   "manifest_version": 2,
-  "description": "谷歌浏览器快捷工具箱，源码https://github.com/varddd/chrome-toolbox",
+  "description": "谷歌浏览器快捷工具箱，源码https://github.com/zhoubangfu/chrome-toolbox",
   "icons": {
     "16": "img/logo128.png",
     "48": "img/logo128.png",
