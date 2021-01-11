@@ -2,7 +2,7 @@
 
 chrome-toolbox 是谷歌浏览器`快捷工具`插件，使用 react 开发，意在提供一个快捷方便且可自定义的工具箱，目前实现【字符替换、统计】、【随机值】、【正则测试】功能。
 
-开发环境使用[react-env](https://github.com/varddd/react-env)修改。
+开发环境使用[react-env](https://github.com/zhoubangfu/react-env)修改。
 
 ## 预览
 
@@ -25,7 +25,7 @@ chrome-toolbox 是谷歌浏览器`快捷工具`插件，使用 react 开发，�
 
 启动开发环境项目
 
-chrome api在开发环境不会生效哦，例如：清理缓存、获取当前窗口信息等。
+chrome api 在开发环境不会生效哦，例如：清理缓存、获取当前窗口信息等。
 
 ```shell
 yarn start

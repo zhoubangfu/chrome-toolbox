@@ -36,8 +36,8 @@ ReactDOM.render(
     </Tabs>
     <footer className="footer">
       源码地址：
-      <a href="https://github.com/varddd/chrome-toolbox" target="__blank">
-        https://github.com/varddd/chrome-toolbox
+      <a href="https://github.com/zhoubangfu/chrome-toolbox" target="__blank">
+        https://github.com/zhoubangfu/chrome-toolbox
       </a>
     </footer>
   </>,

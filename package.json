@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "author": {
     "name": "varddd",
-    "url": "https://github.com/varddd"
+    "url": "https://github.com/zhoubangfu"
   },
-  "homepage": "https://toolbox.varddd.com",
+  "homepage": "https://zhoubangfu.com",
   "license": "MIT",
   "description": "Chrome 浏览器快捷工具箱",
   "dependencies": {
