@@ -7,6 +7,9 @@ module.exports = {
     'react-app'
   ],
   plugins: ['@typescript-eslint', 'react'],
+  globals: {
+    chrome: true
+  },
   rules: {
     // 关闭模块引入校验
     '@typescript-eslint/no-var-requires': 'off',
