@@ -5,7 +5,7 @@ import { Form, Input, Button, message } from 'antd'
 
 import './antd.override.scss'
 
-const Hash = () => {
+const Hash = (): React.ReactElement => {
   const [form] = Form.useForm()
 
   const encode = (algorithm: 'MD5' | 'SHA1' | 'SHA256' | 'SHA224' | 'SHA512') => {

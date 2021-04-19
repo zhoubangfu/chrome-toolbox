@@ -4,7 +4,7 @@ import { Form, Input, Button, Checkbox } from 'antd'
 
 const CheckboxGroup = Checkbox.Group
 
-const RegExpTools = () => {
+const RegExpTools = (): React.ReactElement => {
   // 待匹配文本
   const [text, setText] = useState<string>('')
   // 正则文本

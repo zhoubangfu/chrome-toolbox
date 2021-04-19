@@ -6,7 +6,7 @@ import Hash from './Hash'
 
 import styles from './style.module.scss'
 
-const EncryptTools = () => {
+const EncryptTools = (): React.ReactElement => {
   return (
     <div className="main">
       <Tabs defaultActiveKey="1" tabPosition="bottom">

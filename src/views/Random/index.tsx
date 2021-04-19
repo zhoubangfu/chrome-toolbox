@@ -11,7 +11,7 @@ const charPool = [
   '`~!@#$%^&*_-+=:;,.?'
 ]
 
-const RandomTools = () => {
+const RandomTools = (): React.ReactElement => {
   // 随机类型
   const [randomTypes, setRandomTypes] = useState<Array<string>>(['小写字母', '数字'])
   // 字符长度

@@ -7,7 +7,7 @@ import styles from './style.module.scss'
 // 生产环境存在变量
 declare let chrome: any
 
-const QRcodeTools = () => {
+const QRcodeTools = (): React.ReactElement => {
   const [form] = Form.useForm()
 
   const qrcodeCanvasRef: any = useRef()

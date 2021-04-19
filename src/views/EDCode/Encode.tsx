@@ -4,7 +4,7 @@ import { Form, Input, Button, Radio, message, Tooltip } from 'antd'
 
 import './antd.override.scss'
 
-const Encrypt = () => {
+const Encrypt = (): React.ReactElement => {
   const [form] = Form.useForm()
 
   const encode = () => {

@@ -16,7 +16,7 @@ import styles from './style.module.scss'
 
 // doc: https://crxdoc-zh.appspot.com/extensions/browsingData
 
-const CacheTools = () => {
+const CacheTools = (): React.ReactElement => {
   const [form] = Form.useForm()
 
   const [spinning, setSpinning] = useState(false)

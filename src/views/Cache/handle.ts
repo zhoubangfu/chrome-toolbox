@@ -13,7 +13,7 @@ export const ranges: any = {
   M1: 2592000000,
   all: new Date().getTime()
 }
-export const getTargetSetting = (selectedTypes: Array<string>): object => {
+export const getTargetSetting = (selectedTypes: Array<string>): any => {
   const defaultSetting = {
     history: false,
     cache: false,
@@ -32,7 +32,7 @@ export const getTargetSetting = (selectedTypes: Array<string>): object => {
 
   return {
     ...defaultSetting,
-    ...selectedTypes.reduce((target: object, type: string) => {
+    ...selectedTypes.reduce((target: any, type: string) => {
       return {
         ...target,
         [type]: true
@@ -43,8 +43,8 @@ export const getTargetSetting = (selectedTypes: Array<string>): object => {
 export const handleDo = (
   selectedTypes: Array<string>,
   rangeName: string,
-  callback: Function
-) => {
+  callback: () => any
+): void => {
   chrome.browsingData.remove(
     {
       since: new Date().getTime() - ranges[rangeName]

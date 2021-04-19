@@ -1,4 +1,4 @@
-export const jsCopy = (value: string) => {
+export const jsCopy = (value: string): void => {
   const input = document.createElement('input')
   document.body.appendChild(input)
 
@@ -10,7 +10,7 @@ export const jsCopy = (value: string) => {
 
   document.body.removeChild(input)
 }
-
-export default {
+const obj = {
   jsCopy
 }
+export default obj

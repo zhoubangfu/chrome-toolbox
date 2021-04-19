@@ -49,7 +49,7 @@ const regResult = (targetStr: string, reg: RegExp): number => {
   return regResultArr === null ? 0 : regResultArr?.length
 }
 
-const StrTools = () => {
+const StrTools = (): React.ReactElement => {
   // 输入内容
   const [inputText, setInputText] = useState('')
   // 统计结果
