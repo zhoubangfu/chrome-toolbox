@@ -34,6 +34,20 @@ const QRcodeTools = (): React.ReactElement => {
     })
   }
 
+  const saveFile = () => {
+    const MIME_TYPE = 'image/png'
+
+    const imgURL = qrcodeCanvasRef.current.toDataURL(MIME_TYPE)
+
+    const dlLink = document.createElement('a')
+    dlLink.download = 'qr'
+    dlLink.href = imgURL
+    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':')
+    document.body.appendChild(dlLink)
+    dlLink.click()
+    document.body.removeChild(dlLink)
+  }
+
   return (
     <div className={styles['qrcode']}>
       <Form form={form}>
@@ -48,7 +62,10 @@ const QRcodeTools = (): React.ReactElement => {
           <Button className={styles['button-frant']} onClick={generate} type="primary">
             生成
           </Button>
-          <Button onClick={getPageUrl}>获取网址</Button>
+          <Button className={styles['button-frant']} onClick={getPageUrl}>
+            获取网址
+          </Button>
+          <Button onClick={saveFile}>保存</Button>
         </Form.Item>
       </Form>
       <div className={styles['qrcode-container']}>
