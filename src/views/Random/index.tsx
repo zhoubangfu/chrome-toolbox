@@ -31,11 +31,8 @@ const RandomTools = (): React.ReactElement => {
   }): void => {
     // 备选字符
     const poolTarget = randomTypes.reduce((all = '', curr: string, index: number) => {
-      if (index === 1) {
-        all = charPool[options.indexOf(all)]
-      }
       return all + charPool[options.indexOf(curr)]
-    })
+    }, charPool[options.indexOf(randomTypes[0])])
 
     // 生成结果
     const randomArr = []
