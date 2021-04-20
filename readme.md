@@ -8,7 +8,7 @@ chrome-toolbox 是谷歌浏览器`快捷工具`插件，使用 react 开发，�
 
 使用文档：[https://zhoubangfu.com/a/24289a12](https://zhoubangfu.com/a/24289a12)
 
-![](https://art-1252753142.cos.ap-chengdu.myqcloud.com/24289a12/0b5b05ea-df6f-4e68-9af0-8eed0a88fdd22132708924312385166.png)
+![](https://zhoubangfu.com/cos/2021/0420144313.png)
 
 ## 项目开发环境说明
 
