@@ -59,10 +59,10 @@ const QRcodeTools = (): React.ReactElement => {
           <Input allowClear={true} onPressEnter={generate} autoComplete={'off'} />
         </Form.Item>
         <Form.Item>
-          <Button className={styles['button-frant']} onClick={generate} type="primary">
+          <Button className="button-frant" onClick={generate} type="primary">
             生成
           </Button>
-          <Button className={styles['button-frant']} onClick={getPageUrl}>
+          <Button className="button-frant" onClick={getPageUrl}>
             获取网址
           </Button>
           <Button onClick={saveFile}>保存</Button>
