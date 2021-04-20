@@ -12,5 +12,12 @@
     "default_popup": "index.html",
     "default_icon": "img/logo32.png"
   },
-  "permissions": ["background", "storage", "tabs", "browsingData"]
+  "permissions": ["browsingData", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["scripts/jsAccept.js"],
+      "run_at": "document_end"
+    }
+  ]
 }

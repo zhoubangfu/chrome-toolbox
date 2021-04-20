@@ -9,6 +9,7 @@ import RegExpTools from './views/RegExp'
 import QRCodeTools from './views/QRCode'
 import EDCodeTools from './views/EDCode'
 import CacheTools from './views/Cache'
+import JsInsert from './views/JsInsert'
 
 import './styles/global.scss'
 
@@ -32,6 +33,9 @@ ReactDOM.render(
       </Tabs.TabPane>
       <Tabs.TabPane tab="二维码" key="qrcode-tool">
         <QRCodeTools />
+      </Tabs.TabPane>
+      <Tabs.TabPane tab="代码嵌入" key="console-tool">
+        <JsInsert />
       </Tabs.TabPane>
     </Tabs>
     <footer className="footer">
