@@ -1,1 +1,1 @@
-export const URL_PREFIX = 'https://zhoubangfu.com/'
+export const URL_PREFIX = 'https://imbf.cc/'

@@ -2,13 +2,13 @@
 
 chrome-toolbox 是谷歌浏览器`快捷工具`插件，使用 react 开发，意在提供一个快捷方便且可自定义的工具箱，目前实现【字符替换、统计】、【随机值】、【正则测试】功能。
 
-开发环境使用[react-env](https://github.com/zhoubangfu/react-env)修改。
+开发环境使用[react-env](https://github.com/imzbf/react-env)修改。
 
 ## 预览
 
-使用文档：[https://zhoubangfu.com/a/24289a12](https://zhoubangfu.com/a/24289a12)
+使用文档：[https://imbf.cc/a/24289a12](https://imbf.cc/a/24289a12)
 
-![](https://zhoubangfu.com/cos/2021/0420144313.png)
+![](https://imbf.cc/cos/2021/0420144313.png)
 
 ## 项目开发环境说明
 

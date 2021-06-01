@@ -57,8 +57,8 @@ const App = () => {
       </Tabs>
       <footer className="footer">
         源码地址：
-        <a href="https://github.com/zhoubangfu/chrome-toolbox" target="__blank">
-          https://github.com/zhoubangfu/chrome-toolbox
+        <a href="https://github.com/imzbf/chrome-toolbox" target="__blank">
+          https://github.com/imzbf/chrome-toolbox
         </a>
       </footer>
     </>
